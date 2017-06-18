@@ -1,5 +1,6 @@
 # Linux Final Project Report
 >姓名：王建男
+>
 >学号：22920142203919
 
 ### 一、实验目的与要求
@@ -23,24 +24,32 @@
 （注：由于学校CS8服务器近期无法正常登录使用，所以截图来源于Win10自带的Ubuntu Bash这一实验环境。）
 
 1. make
+
 ![Makefile](img/make.png)
 > Fig.2 make
 
+
 2. 堆栈（先入后出）
+
 ![stack](img/stack.png)
 > Fig.3 stack
 
+
 3. 队列（先入先出）
+
 ![queue](img/queue.png)
 > Fig.4 queue
 
-4. 树
+
+4. 二叉树
+
 ![tree](img/tree.png)
 > Fig.5 tree
 
+
 ### 四、主要程序
 1. Makefile
-```
+```C++
 main:main.o stack.o queue.o tree.o
     g++ main.o stack.o queue.o tree.o -o main
 
@@ -62,7 +71,7 @@ clean:
 
 
 2. 主函数
-```
+```C++
 int main()
 {
     int testNum;
@@ -92,7 +101,7 @@ int main()
 ```
 主函数是程序入口，在主函数中又分别定义了三个子函数StackTest()、QueueTest()、TreeTest()，用于执行对各类数据结构的操作。
 具体定义：
-```
+```C++
 void StackTest(int count){
     Stack *stack = new Stack();
     int data;
@@ -166,7 +175,7 @@ void TreeTest(int count){
 
 3. 堆栈
 堆栈的主要类的定义如下（stack.h）：
-```
+```C++
 typedef struct sData
 {
     int data;
@@ -190,7 +199,7 @@ private:
 };
 ```
 各个类的具体实现如下（stack.cpp）：
-``` 
+```C++
 void Stack::CreateNode(int data){
     StackData *p = new StackData;
     if (p == nullptr){
@@ -259,7 +268,7 @@ Stack::Stack()
 
 4. 队列
 队列主要类的定义如下（queue.h）:
-```
+```C++
 class Queue
 {
 public:
@@ -277,7 +286,7 @@ private:
 };
 ```
 各个类的具体实现如下（queue.cpp）:
-```
+```C++
 void Queue::EnQueue(int data)
 {
     if (pop == nullptr){
@@ -357,7 +366,7 @@ Queue::Queue()
 
 5. 二叉树
 二叉树主要类的定义如下（tree.h）:
-```
+```C++
 typedef struct tree
 {
     int data;
@@ -387,7 +396,7 @@ private:
 };
 ```
 各个类的具体实现（tree.cpp），树的遍历用递归实现:
-```
+```C++
 Tree* Twotree::getRoot()
 {
     return this->root;
